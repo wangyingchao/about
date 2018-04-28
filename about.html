@@ -1,0 +1,629 @@
+<ion-header>
+  <ion-toolbar no-border-top color="primary">
+    <ion-segment [(ngModel)]="tongxunlu">
+      <ion-segment-button value="xiaoxi">
+        消息
+      </ion-segment-button>
+      <ion-segment-button value="tongxunlu">
+        通讯录
+      </ion-segment-button>
+      <ion-segment-button value="tonghuajilu">
+        通话记录
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-buttons end>
+      <button ion-button icon-only qd (click)="presentPopover($event)">
+         <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content bg-color>
+  <div [ngSwitch]="tongxunlu">
+
+    <!-- 消息 start-->
+    <div *ngSwitchCase="'xiaoxi'">
+      <ion-list>
+        <ion-item-sliding>
+          <ion-item>
+            <ion-avatar item-left>
+              <img src="assets/images/qt/xx1_03.png" />
+            </ion-avatar>
+            <p jsxx>即时消息</p>
+            <p xjsxx>您有新的即时消息</p>
+          </ion-item>
+          <ion-item-options side="right">
+            <button ion-button color="primary">
+        <ion-icon name="text"></ion-icon>
+        Text      
+      </button>
+            <button ion-button color="secondary">
+        <ion-icon name="call"></ion-icon>
+        Call      
+      </button>
+            <button ion-button color="primary">
+        <ion-icon name="mail"></ion-icon>
+        Email      
+      </button>
+          </ion-item-options>
+        </ion-item-sliding>
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="assets/images/qt/xx1_06.png" />
+          </ion-avatar>
+          <p jsxx>即时消息</p>
+          <p xjsxx>您有新的即时消息</p>
+        </ion-item>
+        <ion-item (click)="ltym()">
+          <ion-avatar item-left>
+            <img src="assets/images/qt/dbxq_05.jpg" />
+          </ion-avatar>
+          <ion-row>
+            <ion-col col-10>
+              <p xjsxx>资其友</p>
+              <p xjsxx>我找了新货源了很适合你，快来看看！</p>
+            </ion-col>
+            <ion-col col-2>
+              <div text-center xxk>
+                <p xxs> 1</p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+    </div>
+    <!-- 消息end -->
+
+
+    <!-- 通讯录start -->
+    <ion-list *ngSwitchCase="'tongxunlu'">
+      <ion-list inset>
+        <ion-item gd>
+          <ion-label>
+            <ion-icon color-a9 name="search">
+            </ion-icon>
+          </ion-label>
+          <ion-input type="search" search-size placeholder="全站搜索，请输入车牌号/联系人姓名"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <!-- 常用联系人分组start -->
+      <ion-row cylxr (click)="togcylxr()">
+        <ion-col col-1>
+          <ion-icon name="md-arrow-dropright" iconys></ion-icon>
+        </ion-col>
+        <ion-col col-9 no-padding>
+          <p cylxrbt>
+            常用联系人
+            <span color-9>1/10</span>
+          </p>
+        </ion-col>
+        <ion-col col-2 no-padding text-right>
+          <ion-icon name="ios-list" color-size></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <div *ngIf="isShowcylxr" zk>
+        <ion-list>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="assets/images/qt/dbxq_05.jpg">
+              </ion-avatar>
+              <p name-size>资其友</p>
+              <p no-margin>云南朝云物流有限公司/<span tel-size>138888888</span></p>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+             <ion-icon name="text"></ion-icon>
+               Text      
+             </button>
+                <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call      
+                 </button>
+                <button ion-button color="primary">
+                <ion-icon name="mail"></ion-icon>
+                 Email      
+               </button>
+              </ion-item-options>
+            </ion-item>
+          </ion-item-sliding>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="assets/images/qt/dbxq_05.jpg">
+              </ion-avatar>
+              <p name-size>资其友</p>
+              <p no-margin>云南朝云物流有限公司/<span tel-size>138888888</span></p>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+             <ion-icon name="text"></ion-icon>
+               Text      
+             </button>
+                <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call      
+                 </button>
+                <button ion-button color="primary">
+                <ion-icon name="mail"></ion-icon>
+                 Email      
+               </button>
+              </ion-item-options>
+            </ion-item>
+          </ion-item-sliding>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="assets/images/qt/dbxq_05.jpg">
+              </ion-avatar>
+              <p name-size>资其友</p>
+              <p no-margin>云南朝云物流有限公司/<span tel-size>138888888</span></p>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+             <ion-icon name="text"></ion-icon>
+               Text      
+             </button>
+                <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call      
+                 </button>
+                <button ion-button color="primary">
+                <ion-icon name="mail"></ion-icon>
+                 Email      
+               </button>
+              </ion-item-options>
+            </ion-item>
+          </ion-item-sliding>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="assets/images/qt/dbxq_05.jpg">
+              </ion-avatar>
+              <p name-size>资其友</p>
+              <p no-margin>云南朝云物流有限公司/<span tel-size>138888888</span></p>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+             <ion-icon name="text"></ion-icon>
+               Text      
+             </button>
+                <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call      
+                 </button>
+                <button ion-button color="primary">
+                <ion-icon name="mail"></ion-icon>
+                 Email      
+               </button>
+              </ion-item-options>
+            </ion-item>
+          </ion-item-sliding>
+        </ion-list>
+      </div>
+      <!-- 常用联系人分组end -->
+
+
+      <!-- 专线分组start -->
+      <ion-row (click)="togzx()" cylxr>
+        <ion-col col-1>
+          <ion-icon name="md-arrow-dropright" iconys></ion-icon>
+        </ion-col>
+        <ion-col col-9 no-padding>
+          <p cylxrbt>
+            专线
+            <span color-9>1/10</span>
+          </p>
+        </ion-col>
+        <ion-col col-2 no-padding text-right>
+          <ion-icon name="ios-list" color-size></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <div *ngIf="isShowzx" zk>
+        <ion-list>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="assets/images/qt/dbxq_05.jpg">
+              </ion-avatar>
+              <p name-size>资其友</p>
+              <p no-margin>云南朝云物流有限公司/<span tel-size>138888888</span></p>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+             <ion-icon name="text"></ion-icon>
+               Text      
+             </button>
+                <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call      
+                 </button>
+                <button ion-button color="primary">
+                <ion-icon name="mail"></ion-icon>
+                 Email      
+               </button>
+              </ion-item-options>
+            </ion-item>
+          </ion-item-sliding>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="assets/images/qt/dbxq_05.jpg">
+              </ion-avatar>
+              <p name-size>资其友</p>
+              <p no-margin>云南朝云物流有限公司/<span tel-size>138888888</span></p>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+             <ion-icon name="text"></ion-icon>
+               Text      
+             </button>
+                <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call      
+                 </button>
+                <button ion-button color="primary">
+                <ion-icon name="mail"></ion-icon>
+                 Email      
+               </button>
+              </ion-item-options>
+            </ion-item>
+          </ion-item-sliding>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="assets/images/qt/dbxq_05.jpg">
+              </ion-avatar>
+              <p name-size>资其友</p>
+              <p no-margin>云南朝云物流有限公司/<span tel-size>138888888</span></p>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+             <ion-icon name="text"></ion-icon>
+               Text      
+             </button>
+                <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call      
+                 </button>
+                <button ion-button color="primary">
+                <ion-icon name="mail"></ion-icon>
+                 Email      
+               </button>
+              </ion-item-options>
+            </ion-item>
+          </ion-item-sliding>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="assets/images/qt/dbxq_05.jpg">
+              </ion-avatar>
+              <p name-size>资其友</p>
+              <p no-margin>云南朝云物流有限公司/<span tel-size>138888888</span></p>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+             <ion-icon name="text"></ion-icon>
+               Text      
+             </button>
+                <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call      
+                 </button>
+                <button ion-button color="primary">
+                <ion-icon name="mail"></ion-icon>
+                 Email      
+               </button>
+              </ion-item-options>
+            </ion-item>
+          </ion-item-sliding>
+        </ion-list>
+      </div>
+      <!-- 专线分组End -->
+
+      <!-- 行政区分组start-->
+      <ion-row (click)="togxzq()" style="background-color:#fff;padding:2% 5%;border-top:1px solid #dbdbdb;">
+        <ion-col col-1>
+          <ion-icon name="md-arrow-dropright" style="color:#bbbbbb;font-size:30px;"></ion-icon>
+        </ion-col>
+        <ion-col col-9 no-padding>
+          <p style="margin:0px;color:#333;font-size:16px;line-height:40px;">
+            行政区
+            <span style="color:#999;">1/10</span>
+          </p>
+        </ion-col>
+        <ion-col col-2 no-padding text-right>
+          <ion-icon name="ios-list" style="color:#999;font-size:40px;"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+      <div *ngIf="isShowxzq" style="width:100%;margin-top:5%;">
+        <ion-list>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="assets/images/qt/dbxq_05.jpg">
+              </ion-avatar>
+              <p name-size>资其友</p>
+              <p no-margin>云南朝云物流有限公司/<span tel-size>138888888</span></p>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+             <ion-icon name="text"></ion-icon>
+               Text      
+             </button>
+                <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call      
+                 </button>
+                <button ion-button color="primary">
+                <ion-icon name="mail"></ion-icon>
+                 Email      
+               </button>
+              </ion-item-options>
+            </ion-item>
+          </ion-item-sliding>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="assets/images/qt/dbxq_05.jpg">
+              </ion-avatar>
+              <p name-size>资其友</p>
+              <p no-margin>云南朝云物流有限公司/<span tel-size>138888888</span></p>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+             <ion-icon name="text"></ion-icon>
+               Text      
+             </button>
+                <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call      
+                 </button>
+                <button ion-button color="primary">
+                <ion-icon name="mail"></ion-icon>
+                 Email      
+               </button>
+              </ion-item-options>
+            </ion-item>
+          </ion-item-sliding>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="assets/images/qt/dbxq_05.jpg">
+              </ion-avatar>
+              <p name-size>资其友</p>
+              <p no-margin>云南朝云物流有限公司/<span tel-size>138888888</span></p>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+             <ion-icon name="text"></ion-icon>
+               Text      
+             </button>
+                <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call      
+                 </button>
+                <button ion-button color="primary">
+                <ion-icon name="mail"></ion-icon>
+                 Email      
+               </button>
+              </ion-item-options>
+            </ion-item>
+          </ion-item-sliding>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-left>
+                <img src="assets/images/qt/dbxq_05.jpg">
+              </ion-avatar>
+              <p name-size>资其友</p>
+              <p no-margin>云南朝云物流有限公司/<span tel-size>138888888</span></p>
+              <ion-item-options side="right">
+                <button ion-button color="primary">
+             <ion-icon name="text"></ion-icon>
+               Text      
+             </button>
+                <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call      
+                 </button>
+                <button ion-button color="primary">
+                <ion-icon name="mail"></ion-icon>
+                 Email      
+               </button>
+              </ion-item-options>
+            </ion-item>
+          </ion-item-sliding>
+        </ion-list>
+      </div>
+      <p xbpy>星标朋友</p>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail item-left>
+            <img src="assets/images/qt/dbxq_05.jpg">
+          </ion-thumbnail>
+          <p xb-name>资其友
+            <ion-icon name="ios-star" star-iconys></ion-icon>
+          </p>
+        </ion-item>
+      </ion-list>
+    </ion-list>
+    <!-- 行政区分组end -->
+
+    <!-- 通讯录end -->
+
+
+    <!-- 通话记录start -->
+
+    <div *ngSwitchCase="'tonghuajilu'">
+      <ion-row style="background-color:#fff;">
+        <ion-col col-4 text-center (click)="qb()" [ngClass]="{true: 'th-active', false: 'css2'}[isShowqb_s]">
+          <p style="margin:0px;font-size:14px;line-height:30px;">全部记录</p>
+        </ion-col>
+        <ion-col col-4 text-center (click)="hr()"  [ngClass]="{true: 'th-active', false: 'css2'}[isShowhr_s]">
+          <p style="margin:0px;font-size:14px;line-height:30px;">呼入记录</p>
+        </ion-col>
+        <ion-col col-4 text-center (click)="hc()"  [ngClass]="{true: 'th-active', false: 'css2'}[isShowhc_s]">
+          <p style="margin:0px;font-size:14px;line-height:30px;">呼出记录</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-list *ngIf="isShowqb">
+        <div content-ys>
+          <ion-row>
+            <ion-col col-12>
+              <p bt>
+                昆明呈贡→德宏瑞丽
+              </p>
+            </ion-col>
+          </ion-row>
+          <ion-row row-ys>
+            <ion-col col-2 tx>
+              <img src="assets/images/qt/dbxq_05.jpg">
+            </ion-col>
+            <ion-col col-8>
+              <p huozhu-name>资其友
+                <span hz-sf>货主</span>
+              </p>
+              <p style="margin:0px;">
+                <span>13888888888</span>
+                <span tel-time>7月14日 12:36
+              <img src="assets/images/qt/thjl_03.png" >
+            </span>
+              </p>
+            </ion-col>
+            <ion-col col-2 text-center cb-padding>
+              <ion-icon name="ios-arrow-dropright" color-d2></ion-icon>
+              <p cb-ys>重播</p>
+            </ion-col>
+          </ion-row>
+        </div>
+
+
+        <div content-ys>
+          <ion-row>
+            <ion-col col-12>
+              <p bt>
+                昆明呈贡→德宏瑞丽
+              </p>
+            </ion-col>
+          </ion-row>
+          <ion-row row-ys>
+            <ion-col col-2 tx>
+              <img src="assets/images/qt/dbxq_05.jpg">
+            </ion-col>
+            <ion-col col-8>
+              <p huozhu-name>资其友
+                <span hz-sf>货主</span>
+              </p>
+              <p style="margin:0px;">
+                <span>13888888888</span>
+                <span tel-time>7月14日 12:36
+              <img src="assets/images/qt/thjl_07.png" >
+            </span>
+              </p>
+            </ion-col>
+            <ion-col col-2 text-center cb-padding>
+              <ion-icon name="ios-arrow-dropright" color-d2></ion-icon>
+              <p cb-ys>重播</p>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-list>
+
+      <ion-list *ngIf="isShowhr">
+        <div content-ys>
+          <ion-row>
+            <ion-col col-12>
+              <p bt>
+                昆明呈贡→德宏瑞丽
+              </p>
+            </ion-col>
+          </ion-row>
+          <ion-row row-ys>
+            <ion-col col-2 tx>
+              <img src="assets/images/qt/dbxq_05.jpg">
+            </ion-col>
+            <ion-col col-8>
+              <p huozhu-name>资其友
+                <span hz-sf>货主</span>
+              </p>
+              <p style="margin:0px;">
+                <span>13888888888</span>
+                <span tel-time>7月14日 12:36
+              <img src="assets/images/qt/thjl_03.png" >
+            </span>
+              </p>
+            </ion-col>
+            <ion-col col-2 text-center cb-padding>
+              <ion-icon name="ios-arrow-dropright" color-d2></ion-icon>
+              <p cb-ys>重播</p>
+            </ion-col>
+          </ion-row>
+        </div>
+
+
+        <div content-ys>
+          <ion-row>
+            <ion-col col-12>
+              <p bt>
+                昆明呈贡→德宏瑞丽
+              </p>
+            </ion-col>
+          </ion-row>
+          <ion-row row-ys>
+            <ion-col col-2 tx>
+              <img src="assets/images/qt/dbxq_05.jpg">
+            </ion-col>
+            <ion-col col-8>
+              <p huozhu-name>资其友
+                <span hz-sf>货主</span>
+              </p>
+              <p style="margin:0px;">
+                <span>13888888888</span>
+                <span tel-time>7月14日 12:36
+              <img src="assets/images/qt/thjl_03.png" >
+            </span>
+              </p>
+            </ion-col>
+            <ion-col col-2 text-center cb-padding>
+              <ion-icon name="ios-arrow-dropright" color-d2></ion-icon>
+              <p cb-ys>重播</p>
+            </ion-col>
+          </ion-row>
+        </div>
+
+      </ion-list>
+
+
+      <ion-list *ngIf="isShowhc">
+        <div content-ys>
+          <ion-row>
+            <ion-col col-12>
+              <p bt>
+                昆明呈贡→德宏瑞丽
+              </p>
+            </ion-col>
+          </ion-row>
+          <ion-row row-ys>
+            <ion-col col-2 tx>
+              <img src="assets/images/qt/dbxq_05.jpg">
+            </ion-col>
+            <ion-col col-8>
+              <p huozhu-name>资其友
+                <span hz-sf>货主</span>
+              </p>
+              <p style="margin:0px;">
+                <span>13888888888</span>
+                <span tel-time>7月14日 12:36
+              <img src="assets/images/qt/thjl_07.png" >
+            </span>
+              </p>
+            </ion-col>
+            <ion-col col-2 text-center cb-padding>
+              <ion-icon name="ios-arrow-dropright" color-d2></ion-icon>
+              <p cb-ys>重播</p>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-list>
+    </div>
+    <!-- 通话记录end -->
+
+  </div>
+</ion-content>
